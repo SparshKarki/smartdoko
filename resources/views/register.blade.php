@@ -7,39 +7,72 @@
 @section('container')
 <h1> This is register page</h1>
 
+<div class="container">
+    <h3> Register Now </h3>
+      <form action="{{route('userregister')}}" method="post">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Email</span>
+              <input type="text" class="form-control" name="email" placeholder="Email" aria-describedby="basic-addon1">
+            </div>
+          </div>
 
-<div class="col-md-6 col-md-offset-4">
-  <h3> Register Now </h3>
-  <form action="{{route('userregister')}}" method="post">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class = "form-control" id = "email" placeholder = "Email" name="email" >
-    </div>
+          <div class="col-md-6">
+          <select class="form-control" name="user_type">
+            <option value="Admin">I'm Admin</option>
+            <option value="Customer">I'm Customer</option>
+          </select>
+        </div>
+      </div><br/>
 
-      <div class="form-group">
-        <label for="pass">Password</label>
-        <input type="password" class = "form-control" id = "pass" placeholder = "password" name="password" >
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Password</span>
+            <input type="text" class="form-control" name="password" placeholder="password" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+      <div class="col-md-6">
+        <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Confirm Password</span>
+        <input type="text" class="form-control" name="password2" placeholder="password" aria-describedby="basic-addon1">
       </div>
+    </div>
+  </div><br/>
 
-        <div class="form-group">
-          <label for="cpass">Confirm Password</label>
-          <input type="password" class = "form-control" id = "cpass" placeholder = "Confirm password" name="password2" >
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">First Name</span>
+        <input type="text" class="form-control" name="first_name" placeholder="First Name" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Last Name</span>
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name" aria-describedby="basic-addon1">
+      </div>
+    </div>
+  </div><br/>
 
-        <div class="form-group">
-          <label for="cpass">First Name</label>
-          <input type="text" class = "form-control" id = "first_name" placeholder = "First Name" name="first_name" >
-        </div>
 
-        <div class="form-group">
-          <label for="cpass">last Name</label>
-          <input type="text" class = "form-control" id = "last_name" placeholder = "Last Name" name="last_name" >
-        </div>
 
-        <div class="form-group">
-          <label for="cpass">Contact Number</label>
-          <input type="text" class = "form-control" id = "contact_no" placeholder = "Contact Number" name="contact_no" >
-        </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Contact Number</span>
+        <input type="text" class="form-control" name="contact_no" placeholder="Contact Number" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Address</span>
+        <input type="text" class="form-control" name="address" placeholder="Address" aria-describedby="basic-addon1">
+      </div>
+    </div>
+  </div><br/>
 
         <div class="input-group input-group-sm">
           <span class="input-group-addon" id="basic-addon3">Gender</span>
@@ -55,6 +88,8 @@
             <br/>
             <button type="submit" name="submit" class="btn btn-primary" value="submit"> Submit </button>
           </div>
+
+        </div>
 
         @if(count($errors)>0)
         <div class="alert alert-danger">

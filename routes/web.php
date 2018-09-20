@@ -19,5 +19,5 @@ Route::post('/user/submit','registercontroller@store')->name('userregister');
 Route::get('/login','logincontroller@getloginpage')->name('login');
 Route::post('/login','logincontroller@login')->name('login');
 
-Route::get('/user/udashboard','dashboardcontroller@udashboard')->name('dashboard');
-Route::get('/admin/adashboard','dashboardcontroller@adashboard')->name('dashboard');
+Route::get('/user/dashboard','dashboardcontroller@dashboard')->name('dashboard');
+Route::get('/user/dashboard','dashboardcontroller@dashboard')->name('dashboard');
