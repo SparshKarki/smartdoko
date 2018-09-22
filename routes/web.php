@@ -21,3 +21,8 @@ Route::post('/login','logincontroller@login')->name('login');
 
 Route::get('/user/dashboard','dashboardcontroller@dashboard')->name('dashboard');
 Route::get('/user/dashboard','dashboardcontroller@dashboard')->name('dashboard');
+
+Route::get('/user/dashboard/category','dashboardcontroller@getcatpage')->name('getcatpage');
+Route::post('/user/dashboard/category/submit','dashboardcontroller@add_category')->name('add_category');
+Route::get('/user/dashboard/product','dashboardcontroller@getproductpage')->name('getproductpage');
+Route::post('/user/dashboard/product/submit','dashboardcontroller@add_product')->name('add_product');
