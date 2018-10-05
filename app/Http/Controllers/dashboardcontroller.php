@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use App\Category;
+use App\category;
 use App\Product;
 use DB;
 
@@ -15,12 +15,9 @@ class dashboardcontroller extends Controller
   public function dashboard()
   {
     $user = DB::table('users')->where('id',Auth::id())->first();
-    if($user->user_type=='Admin')
-    {
+    if($user->user_type=='Admin'){
       return view('admin_dashboard');
-    }
-    else
-    {
+    }else{
       return view('customer_dashboard');
     }
   }
@@ -44,10 +41,11 @@ class dashboardcontroller extends Controller
 
 //adding new Products
 public function getproductpage(){
-  return view('product_form');
+  $category_name = DB::table('categories')->get();
+  return view('product_form')->with(['category' => $category_name]);
 }
 public function add_product(Request $request){
-  $category_profile = DB::table('categories')->where ('user_id',Auth::id())->first();
+
   $this->validate ($request,[
     'name' => 'required|min:3|max:20',
     'color' => 'required',
